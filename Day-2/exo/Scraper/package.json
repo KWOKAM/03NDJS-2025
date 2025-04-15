@@ -10,6 +10,7 @@
   "author": "102817_KTRS",
   "license": "ISC",
   "keywords": ["scraping", "elite one", "footballdatabase", "nodejs", "cheerio"],
+  "type": "module",
   "dependencies": {
     "cheerio": "^1.0.0"
   }

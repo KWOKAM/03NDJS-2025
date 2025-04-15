@@ -1,34 +1,14 @@
 // Importing cheerio
 import * as cheerio from 'cheerio';
-
-// Define the URL of the Elite One ranking page
-
-async function scrapeMozilla/5.0() {
-
 const url = 'https://www.footballdatabase.eu/fr/competition/general/133-cameroun-elite-one/2024-2025';
-
-// Using fetch to get the HTML content 
-// of the page
-const res = await fetch(url, {
-  headers: {
-    'User-Agent': 'Mozilla/5.0'  // Set a user-agent to avoid being blocked
-  }
-});
-
-// Extract the HTML text from the response
-const html = await res.text();
-
-// Load the HTML into cheerio (like jQuery for the server)
-const $ = cheerio.lad(html);
-
+async function scrapeMozilla() {
+try {
+	const html = await res.text();
+	const res = await fetch(url)cheerio.fromUrl(url);
 // Create an array to store all the extracted teams
 const teams = [];
-
-// Loop through each row in the Elite One table body
-$('table.standings tbody tr').each((i, row) => {
-// Get all <td> cells within this row
-  const cells = $(row).find('td');
-
+	$('table.standings tbody tr').each((i, row) => {
+		const cells = $(row).find('td');
 
 // Building a team object from the row cells
   const team = {
@@ -55,5 +35,5 @@ console.table(teams.slice(0, 10));
 console.log(`${teams.length} teams scraped from Elite One.`);
 }
 
-scrapeMozilla/5.0();
+scrapeMozilla();
 
