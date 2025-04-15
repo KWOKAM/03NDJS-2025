@@ -1,0 +1,33 @@
+Nous parlons de trois facons de rediger un code. 
+- la syntaxe du call back
+
+async function fetchData(url, queries) {
+   await axios.get(url, queries)
+          .then((data) => {
+             console.log(data);
+   })
+          .catch((err) => {
+             console.error(err);
+
+   });
+
+Exemple: 
+
+const fetch = require('node-fetch');
+
+async function getData() {
+  try {
+    const res = await fetch('https://api.example.com/data');
+    const json = await res.json();
+    console.log(json);
+  } catch (err) {
+    console.error('Erreur de requête :', err);
+  }
+}
+
+getData();
+
+
+Le promise permet d'attendre si jamais une requête mais trop de temps à être exécuter et par la suite, on peut revenir la traiter. Ce que ne fait pas le call back.
+// exo: Trouvons un tableau sur Internet 
+

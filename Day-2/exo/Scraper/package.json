@@ -1,0 +1,17 @@
+{
+  "name": "elite-one-scraper",
+  "version": "1.0.0",
+  "description": "Un script Node.js pour récupérer le classement du championnat Elite One (Cameroun)",
+  "main": "scrapeEliteOne.js",
+  "scripts": {
+    "start": "node scrapeEliteOne.js",
+    "test": "echo \"Pas de tests définis\" && exit 0"
+  },
+  "author": "102817_KTRS",
+  "license": "ISC",
+  "keywords": ["scraping", "elite one", "footballdatabase", "nodejs", "cheerio"],
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}
+
