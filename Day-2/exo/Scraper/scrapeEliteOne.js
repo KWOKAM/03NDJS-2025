@@ -4,8 +4,8 @@ const url = 'https://www.footballdatabase.eu/fr/competition/general/133-cameroun
 async function scrapeMozilla() {
 try {
 	const html = await res.text();
-	const res = await fetch(url)cheerio.fromUrl(url);
-// Create an array to store all the extracted teams
+	const res = await res.text();
+	const $ = cheerio.load(html);
 const teams = [];
 	$('table.standings tbody tr').each((i, row) => {
 		const cells = $(row).find('td');
@@ -24,16 +24,17 @@ const teams = [];
     goal_difference: $(cells[9]).text().trim(),  
     points: $(cells[10]).text().trim() };
 
-// Add the team to the array
+
   teams.push(team);
 });
 
 // Display the first 10 teams as a table in the console
-console.table(teams.slice(0, 10));
+console.table(teams.slice(0, 15);
 
 // Show how many total teams were found
 console.log(`${teams.length} teams scraped from Elite One.`);
-}
+} catch (err) {
+	console.error('Error observed: ' err);
 
 scrapeMozilla();
 
